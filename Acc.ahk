@@ -643,6 +643,10 @@ acc_childrenFilter(oAcc, fCondition, value=0, returnOne=false, obj=0){
     return results
 }
 
+acc_getRootElement(){
+    return acc_ObjectFromWindow(0x10010)  ;Root object window handle always appears to be 0x10010
+}
+
 class ACC_ChildProxy {
     __New(oAccParent,id){
         this.__accParent         := oAccParent
