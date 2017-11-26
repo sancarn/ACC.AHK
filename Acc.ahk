@@ -43,7 +43,7 @@
 ;       myAwesomeFunction(oAcc,val){
 ;           return val
 ;       }
-; last updated 06/07/2017
+; last updated 26/11/2017
 ;------------------------------------------------------------------------------
 
 ;https://msdn.microsoft.com/en-us/library/windows/desktop/dd373606(v=vs.85).aspx
