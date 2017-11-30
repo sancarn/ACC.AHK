@@ -1,4 +1,4 @@
-# Acc.ahk - Standard Library
+# AccV2.ahk - Standard Library
 ## Created by Sean
 ## Updated by jethrow:
 *	Modified ComObjEnwrap params from (9,pacc) --> (9,pacc,1)
