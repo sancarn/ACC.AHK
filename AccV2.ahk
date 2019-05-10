@@ -735,53 +735,53 @@ class ACC_ChildProxy {
       try {
         this.accDefaultAction    := oAccParent.accDefaultAction(id)    
       } catch e {
-        this.accDefaultAction=
+        this.accDefaultAction:=""
       }
       try {
         this.accDescription      := oAccParent.accDescription(id)      
       } catch e {
-        this.accDescription=
+        this.accDescription:=""
       }
       try {
         this.accHelp             := oAccParent.accHelp(id)             
       } catch e {
-        this.accHelp=
+        this.accHelp:=""
       }
       try {
         this.accHelpTopic        := oAccParent.accHelpTopic(id)        
       } catch e {
-        this.accHelpTopic=
+        this.accHelpTopic:=""
       }
       try {
         this.accKeyboardShortcut := oAccParent.accKeyboardShortcut(id) 
       } catch e {
-        this.accKeyboardShortcut=
+        this.accKeyboardShortcut:=""
       }
       try {
         this.accName             := oAccParent.accName(id)             
       } catch e {
-        this.accName=
+        this.accName:=""
       }
       
       try {
         this.accRole             := oAccParent.accRole(id)             
       } catch e {
-        this.accRole=
+        this.accRole:=""
       }
       try {
         this.accState            := oAccParent.accState(id)            
       } catch e {
-        this.accState=
+        this.accState:=""
       }
       try {
         this.accValue            := oAccParent.accValue(id)            
       } catch e {
-        this.accValue=
+        this.accValue:=""
       }
       try {
         this.accFocus            := this.accState && ACC_STATE.FOCUSED 
       } catch e {
-        this.accFocus=
+        this.accFocus:=""
       }
     }
     
