@@ -4,7 +4,7 @@
 ; Authors   (dd/mm/yyyy):
 ;   Sean    ()
 ;   jethrow (19/02/2012)
-;   Sancarn (26/11/2017,18/01/2019)
+;   Sancarn (26/11/2017,18/01/2019,10/05/2019)
 ;----------------------------------------------------------------------------------------------------------------------
 ; CHANGE LOG:
 ;----------------------------------------------------------------------------------------------------------------------
@@ -23,8 +23,11 @@
 ;         myAwesomeFunction(oAcc,val){
 ;             return val
 ;         }
+;     Added Acc_ChildProxy to Acc_Children
 ;18/01/2019:
 ;     Documentation Update
+;10/05/2019:
+;     Error Checking to ACC_ChildProxy
 ;----------------------------------------------------------------------------------------------------------------------
 ;ACC INTELLISENSE PACK:
 ;----------------------------------------------------------------------------------------------------------------------
@@ -724,19 +727,62 @@ acc_getRootElement(){
 
 class ACC_ChildProxy {
     __New(oAccParent,id){
-        this.__accParent         := oAccParent
-        this.__accChildID        := id
-        this.accDefaultAction    := oAccParent.accDefaultAction(id)
-        this.accDescription      := oAccParent.accDescription(id)
-        this.accHelp             := oAccParent.accHelp(id)
-        this.accHelpTopic        := oAccParent.accHelpTopic(id) 
-        this.accKeyboardShortcut := oAccParent.accKeyboardShortcut(id)
-        this.accName             := oAccParent.accName(id)
-        this.accParent           := oAccParent
-        this.accRole             := oAccParent.accRole(id)
-        this.accState            := oAccParent.accState(id)
-        this.accValue            := oAccParent.accValue(id)
-        this.accFocus            := this.accState && ACC_STATE.FOCUSED
+      global ACC_STATE
+      this.__accParent         := oAccParent                        
+      this.__accChildID        := id   
+      this.accParent           := oAccParent                               
+      
+      try {
+        this.accDefaultAction    := oAccParent.accDefaultAction(id)    
+      } catch e {
+        this.accDefaultAction=
+      }
+      try {
+        this.accDescription      := oAccParent.accDescription(id)      
+      } catch e {
+        this.accDescription=
+      }
+      try {
+        this.accHelp             := oAccParent.accHelp(id)             
+      } catch e {
+        this.accHelp=
+      }
+      try {
+        this.accHelpTopic        := oAccParent.accHelpTopic(id)        
+      } catch e {
+        this.accHelpTopic=
+      }
+      try {
+        this.accKeyboardShortcut := oAccParent.accKeyboardShortcut(id) 
+      } catch e {
+        this.accKeyboardShortcut=
+      }
+      try {
+        this.accName             := oAccParent.accName(id)             
+      } catch e {
+        this.accName=
+      }
+      
+      try {
+        this.accRole             := oAccParent.accRole(id)             
+      } catch e {
+        this.accRole=
+      }
+      try {
+        this.accState            := oAccParent.accState(id)            
+      } catch e {
+        this.accState=
+      }
+      try {
+        this.accValue            := oAccParent.accValue(id)            
+      } catch e {
+        this.accValue=
+      }
+      try {
+        this.accFocus            := this.accState && ACC_STATE.FOCUSED 
+      } catch e {
+        this.accFocus=
+      }
     }
     
     accDoDefaultAction(){
